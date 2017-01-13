@@ -566,7 +566,7 @@ namespace Microsoft.Azure.Commands.DataLakeStore.Models
             }
             catch (Exception e)
             {
-                throw new CloudException(string.Format(Properties.Resources.UploadFailedMessage, e));
+                throw new CloudException(string.Format(Properties.Resources.UploadFailedMessage, e), e);
             }
             finally
             {

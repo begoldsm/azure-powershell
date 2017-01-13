@@ -88,6 +88,15 @@ namespace Microsoft.Azure.Commands.DataLakeAnalytics.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hive does not support compile only mode. Please resubmit without the CompileOnly flag..
+        /// </summary>
+        internal static string CannotCompileHive {
+            get {
+                return ResourceManager.GetString("CannotCompileHive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data Lake Analytics account with name &apos;{0}&apos; already exists..
         /// </summary>
         internal static string DataLakeAnalyticsAccountExists {
@@ -160,7 +169,7 @@ namespace Microsoft.Azure.Commands.DataLakeAnalytics.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid JobType selected. Please select -USql when submitting a job.
+        ///   Looks up a localized string similar to Invalid JobType {0} selected. Valid job types are &apos;Hive&apos; and &apos;USql&apos;..
         /// </summary>
         internal static string InvalidJobType {
             get {
@@ -183,6 +192,15 @@ namespace Microsoft.Azure.Commands.DataLakeAnalytics.Properties {
         internal static string InvalidUSqlTypeRequest {
             get {
                 return ResourceManager.GetString("InvalidUSqlTypeRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Configurations parameter is only supported for Hive jobs and will be ignored..
+        /// </summary>
+        internal static string JobConfigurationPropertyWarning {
+            get {
+                return ResourceManager.GetString("JobConfigurationPropertyWarning", resourceCulture);
             }
         }
         
