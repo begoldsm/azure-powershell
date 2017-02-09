@@ -141,7 +141,7 @@ namespace Microsoft.Azure.Commands.DataLakeAnalytics
             Mandatory = false,
             HelpMessage = "The custom configurations to use for this job in key / value pairs.This is currently only supported for Hive jobs")]
         [ValidateNotNullOrEmpty]
-        public Hashtable Configurations { get; set; }
+        public Hashtable Configuration { get; set; }
 
         public override void ExecuteCmdlet()
         {
@@ -169,7 +169,7 @@ namespace Microsoft.Azure.Commands.DataLakeAnalytics
             switch(this.Type)
             { 
                 case JobType.USql:
-                    if(Configurations != null && Configurations.Count > 0)
+                    if(Configuration != null && Configuration.Count > 0)
                     {
                         WriteWarningWithTimestamp(Resources.JobConfigurationPropertyWarning);
                     }
@@ -196,7 +196,7 @@ namespace Microsoft.Azure.Commands.DataLakeAnalytics
                     properties = sqlIpProperties;
                     break;
                 case JobType.Hive:
-                    var convertedConfig = TagsConversionHelper.CreateTagDictionary(Configurations, true);
+                    var convertedConfig = TagsConversionHelper.CreateTagDictionary(Configuration, true);
                     if (convertedConfig == null)
                     {
                         convertedConfig = new Dictionary<string, string>();
